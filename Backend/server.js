@@ -15,7 +15,7 @@ const server = http.createServer(app);
 // 🔥 Initialize Socket.io
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "*",
     methods: ["GET", "POST"]
   }
 });
@@ -23,7 +23,9 @@ const io = new Server(server, {
 // Make io accessible inside routes
 app.set("io", io);
 
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
