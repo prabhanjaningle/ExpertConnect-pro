@@ -64,7 +64,7 @@ function MyBookings() {
       <div style={styles.list}>
         {bookings.map((booking) => (
           <div key={booking._id} style={styles.card}>
-            <h4>Expert ID: {booking.expertId?.name}</h4>
+            <h4>Expert: {booking.expertId?.name}</h4>
             <p>Category :{booking.expertId?.category}</p>
             <p>Date: {booking.date}</p>
             <p>Time: {booking.time}</p>
