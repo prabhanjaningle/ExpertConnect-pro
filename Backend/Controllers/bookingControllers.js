@@ -33,7 +33,7 @@ exports.getBookingsByEmail = async (req, res) => {
   try {
     const { email } = req.query;
 
-    const bookings = await Booking.find({ email }).populate("expertID" , "name category experience rating");
+    const bookings = await Booking.find({ email }).populate("expertId" , "name category experience rating");
 
     res.status(200).json({
       success: true,
