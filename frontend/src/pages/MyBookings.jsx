@@ -20,7 +20,7 @@ function MyBookings() {
       setSearched(true);
 
       const res = await axios.get(
-        'https://expertconnect-pro.onrender.com/bookings?email=${email}'
+        `https://expertconnect-pro.onrender.com/bookings?email=${email}`
       );
 
       setBookings(res.data.data);
