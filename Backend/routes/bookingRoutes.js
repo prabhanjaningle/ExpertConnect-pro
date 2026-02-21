@@ -71,7 +71,7 @@ router.get("/", async (req, res) => {
       });
     }
 
-    const bookings = await Booking.find({ email });
+    const bookings = await Booking.find({ email }).populate("expertId" , "name category experience rating");
 
     res.status(200).json({
       success: true,
